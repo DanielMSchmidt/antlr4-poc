@@ -1,0 +1,3 @@
+[submodule "EarlGrey"]
+	path = EarlGrey
+	url = git@github.com:google/EarlGrey.git

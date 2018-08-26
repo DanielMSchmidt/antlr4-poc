@@ -7,3 +7,4 @@ Parse objective-c code and get the same output as [objective-c-parser](https://g
 ## Steps
 
 - Install antlr4: `brew install antlr`
+- Install EarlGrey: `git submodule update --init --recursive`
