@@ -57,3 +57,5 @@ JSListener.prototype.exitPrint = function(ctx) {
 const extractor = new JSListener();
 
 antlr.tree.ParseTreeWalker.DEFAULT.walk(extractor, tree);
+
+// Tutorial: https://www.scriptol.com/programming/antlr4-javascript.php
