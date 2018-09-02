@@ -20,6 +20,40 @@ const tokens = new antlr.CommonTokenStream(lexed);
 const parsed = new Parser(tokens);
 parsed.buildParseTrees = true;
 const tree = parsed.translationUnit();
-const extractor = new Listener();
+
+JSListener = function () {
+    Listener.call(this);
+	return this;
+}
+
+JSListener.prototype = Object.create(Listener.prototype);
+JSListener.prototype.constructor = JSListener;
+
+JSListener.tFileName = "test"
+
+JSListener.prototype.enterProgram = function(ctx) {
+    console.log("enterProgram");
+};
+
+JSListener.prototype.exitProgram = function(ctx) {
+    console.log("exitProgram");
+};
+
+JSListener.prototype.enterAssign = function(ctx) {
+    console.log("enterAssign");
+};
+
+JSListener.prototype.exitAssign = function(ctx) {
+    console.log("exitAssign");
+};
+
+JSListener.prototype.enterPrint = function(ctx) {
+    console.log("enterPrint");
+};
+
+JSListener.prototype.exitPrint = function(ctx) {
+    console.log("exitPrint");
+};
+const extractor = new JSListener();
 
 antlr.tree.ParseTreeWalker.DEFAULT.walk(extractor, tree);
